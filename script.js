@@ -52,7 +52,7 @@ const overlay=document.getElementById("overlay");
 
 
 const oppenAddBookModal=()=>{
-    //addBookForm.reset();
+    addBookForm.reset();
     addBookModal.classList.add("active");
     overlay.classList.add("active");
 };
@@ -99,9 +99,10 @@ const resetBooksGrid = () => {
     bookCard.classList.add("bookCard");
     buttonGroup.classList.add("buttonGroup");
     readBook.classList.add("btn");
-    readBook.classList.add("btn");
+    removeBook.classList.add("btn");
+    removeBook.classList.add("remBtn");
     readBook.onclick=toggleRead;
-   // removeBook.onclick=toggleRemove;
+    removeBook.onclick=toggleRemove;
 
     title.textContent=`${book.title}`;
     author.textContent=`${book.author}`;
@@ -110,6 +111,7 @@ const resetBooksGrid = () => {
 
     if(book.isRead){
         readBook.textContent="Read";
+        readBook.classList.add("read");
     }else{
         readBook.textContent="Not read"
     }
@@ -152,7 +154,7 @@ const resetBooksGrid = () => {
 
 
 
-  const removeBook = (e) => {
+  const toggleRemove = (e) => {
     const title = e.target.parentNode.parentNode.firstChild.innerHTML.replaceAll(
       '"',
       ''
@@ -172,7 +174,7 @@ const resetBooksGrid = () => {
     updateBooksGrid();
   }
 
-  addBookButton.onclick=oppenAddBookModal();
+  addBookButton.onclick=oppenAddBookModal;
   addBookForm.onsubmit=addBook;
   window.onkeydown=handleKeyboardInput;
 

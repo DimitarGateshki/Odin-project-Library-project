@@ -95,6 +95,18 @@ cursor: text;
   border-radius: 50px;
   transition: filter 0.15s ease-in-out;
   padding: 10px;
+  margin: 5px;
+  background-color: var(--accColor);
+  color: var(--fontColor);
+}
+
+.remBtn{
+background-color: var(--mainRed);
+color: var(--white);
+}
+
+.read{
+  background-color: aquamarine;
 }
 
 .btn:hover {
@@ -125,7 +137,7 @@ cursor: text;
   gap: 20px;
   padding: 2%;
   border-radius: 20px;
-  background-color: var(--accColor);
+  background-color: var(--headerColor);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   line-height: 1.2;
  }
